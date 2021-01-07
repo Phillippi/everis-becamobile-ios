@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var imageCapaFilme: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loadHome()
     }
-
-
+    func loadHome() {
+        ListaFilmesAPI().listaCapaFilmes()
+    }
+  
 }
-
