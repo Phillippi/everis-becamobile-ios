@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import CoreData
 
 class ListaFilmesAPI: NSObject {
 
@@ -17,14 +18,31 @@ class ListaFilmesAPI: NSObject {
     
     // MARK: - Métodos
     
-    func listaCapaFilmes() {
+
+    
+    func listaTodosFilmes(completion: @escaping (([Filme]?) -> Void )) {
             Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=\(key)&language=pt-BR", method: .get).responseJSON { (response) in
                 switch response.result {
                 case .success:
-                    print(response.result.value!)
+                    
+                    if let data = response.data {
+                        do {
+                            let moviesResponse = try JSONDecoder().decode(Filmes.self, from: data)
+                            let movies = moviesResponse.results
+                            completion(movies)
+                        } catch let erro {
+                            print(erro.localizedDescription)
+                            completion(nil)
+                        }
+                        
+                    } else {
+                        print("Data nil")
+                        completion(nil)
+                    }
                     break
                 case .failure:
                     print(response.error!)
+                    completion(nil)
                     break
                 }
             }

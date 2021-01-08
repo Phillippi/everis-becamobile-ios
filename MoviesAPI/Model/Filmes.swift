@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Filmes
 struct Filmes: Codable {
     let page: Int
-    let results: [Result]
+    let results: [Filme]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -20,8 +20,8 @@ struct Filmes: Codable {
     }
 }
 
-// MARK: - Result
-struct Result: Codable {
+// MARK: - Filme
+struct Filme: Codable {
     let voteAverage: Double
     let title: String?
     let overview: String
