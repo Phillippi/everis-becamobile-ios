@@ -7,33 +7,72 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UICollectionViewDelegate {
-    @IBOutlet weak var colecaoCapasFilmes: UICollectionView!
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var colecaoCapasFilmes: UICollectionView!
+        
     // MARK: - Variáveis
     
+    let key = "fecd1e2331c61e4e88e8cedaa0d1734f"
     var movies: [Filme] = []
-    let clienteAPI = ListaFilmesAPI()
     
+    // MARK: - Método ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadHome()
+        //loadHome()
         colecaoCapasFilmes.dataSource = self
+        colecaoCapasFilmes.delegate = self
+        downloadJSON {
+            self.colecaoCapasFilmes.reloadData()
+        }
     }
+    
+    // MARK: - Métodos CollectionView
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celulaCapa = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaCapa", for: indexPath) as! CapasFilmesCollectionViewCell
-        celulaCapa.backgroundColor = UIColor.blue
+        let filmeAtual = movies[indexPath.item]
+            celulaCapa.configuraHome(listaFilme: filmeAtual)
+            celulaCapa.layer.borderWidth = 0.5
+            celulaCapa.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
+            celulaCapa.layer.cornerRadius = 8
         return celulaCapa
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+            return CGSize(width: collectionView.bounds.width/2-20, height: 210)
+
+        }
     
-    func loadHome() {
+    // MARK: - Métodos
+    
+    func downloadJSON(completion: @escaping () -> ()){
+        let url = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=\(key)&language=pt-BR")
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error == nil {
+                do {
+                    let filmes = try JSONDecoder().decode(Filmes.self, from: data!)
+                    self.movies = filmes.results
+                    DispatchQueue.main.async {
+                        completion()
+                }
+                }catch {
+                    print("JSON Error")
+                }
+        }
+        }.resume()
+    }
+//    func loadHome() {
 //        clienteAPI.listaTodosFilmes { (filmes) in
 //            if let _filmes = filmes {
 //                self.movies = _filmes
@@ -42,13 +81,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //                print("Erro ao carregar os filmes")
 //            }
 //        }
-        clienteAPI.listaTodosFilmes { (capas) in
-            if let _capas = capas {
-                self.movies = _capas
-                self.printCapas()
-            }
-        }
-    }
+//        clienteAPI.listaTodosFilmes { (capas) in
+//            if let _capas = capas {
+//                self.movies = _capas
+//                self.printCapas()
+//            } else {
+//                print("Erro ao carregar as capas")
+//            }
+//        }
+//    }
 //    func printMovies() {
 //        for movie in movies {
 //            let name: String
@@ -63,12 +104,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //            print(name)
 //        }
 //    }
-    func printCapas() {
-        for movie in movies {
-            let capas: String
-            let posterPath = movie.posterPath
-                capas = "http://image.tmdb.org/t/p/w185/\(posterPath)"
-                print(capas)
-        }
-    }
+//    func printCapas() {
+//        for movie in movies {
+//            let capas: String
+//            let posterPath = movie.posterPath
+//                capas = "http://image.tmdb.org/t/p/w185/\(posterPath)"
+//                print(capas)
+//        }
+//    }
+    
 }
