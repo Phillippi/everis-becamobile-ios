@@ -49,10 +49,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return celulaCapa
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-            return CGSize(width: collectionView.bounds.width/2-20, height: 210)
+        let cellWidth = collectionView.bounds.width / 2
+            return CGSize(width: cellWidth-15, height: 160)
 
         }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detalhe = movies[indexPath.item]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalhesFilmesViewController
+        controller.filmeSelecionado = detalhe
+        self.present(controller, animated: true, completion: nil)
+    }
     
     // MARK: - Métodos
     

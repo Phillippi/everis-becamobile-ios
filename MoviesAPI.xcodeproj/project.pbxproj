@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D76271425AAA2BC00A91CF0 /* DetalhesFilmesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76271325AAA2BC00A91CF0 /* DetalhesFilmesViewController.swift */; };
 		4D92564325A931BE00538FE7 /* CapasFilmesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D92564225A931BE00538FE7 /* CapasFilmesCollectionViewCell.swift */; };
 		4DA5BEAE25A7B33700C9F6BD /* Filmes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5BEAD25A7B33700C9F6BD /* Filmes.swift */; };
 		4DFF622C25A73CD0004556AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF622B25A73CD0004556AF /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		495BAA51FC6F0EB44F036F73 /* Pods-MoviesAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesAPI.debug.xcconfig"; path = "Target Support Files/Pods-MoviesAPI/Pods-MoviesAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		4D76271325AAA2BC00A91CF0 /* DetalhesFilmesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesFilmesViewController.swift; sourceTree = "<group>"; };
 		4D92564225A931BE00538FE7 /* CapasFilmesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapasFilmesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DA5BEAD25A7B33700C9F6BD /* Filmes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filmes.swift; sourceTree = "<group>"; };
 		4DFF622825A73CD0004556AF /* MoviesAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				4DFF622F25A73CD0004556AF /* ViewController.swift */,
+				4D76271325AAA2BC00A91CF0 /* DetalhesFilmesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				4DFF623025A73CD0004556AF /* ViewController.swift in Sources */,
 				4DFF622C25A73CD0004556AF /* AppDelegate.swift in Sources */,
+				4D76271425AAA2BC00A91CF0 /* DetalhesFilmesViewController.swift in Sources */,
 				4DFF622E25A73CD0004556AF /* SceneDelegate.swift in Sources */,
 				4DA5BEAE25A7B33700C9F6BD /* Filmes.swift in Sources */,
 				4D92564325A931BE00538FE7 /* CapasFilmesCollectionViewCell.swift in Sources */,
