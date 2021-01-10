@@ -8,6 +8,7 @@
 import UIKit
 import AlamofireImage
 
+
 class DetalhesFilmesViewController: UIViewController {
 
     // MARK: - IBOutlets
@@ -24,33 +25,40 @@ class DetalhesFilmesViewController: UIViewController {
     
     var filmeSelecionado:Filme? = nil
     
-    
     // MARK: - Métodos
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       configuraFilme()
+        fetchImage()
+        //configuraImagem()
+    }
+    
+    func configuraFilme() {
         if let filme = filmeSelecionado {
-            
-//            self.imageDetalheFilme.image = configuraImagem(imageDetalheFilme)
             self.labelTituloDetalheFilme.text = filme.title ?? filme.name
             self.labelSinopseDetalheFilme.text = filme.overview
             self.labelAvaliacaoDetalheFilme.text = "Avaliação: \(String(filme.voteAverage))"
         }
     }
-    func configuraImagem(_ imagem:Filme){
-        //labelTitulo.text = listaFilme.title ?? listaFilme.name
-        guard let imageUrl = URL(string: "http://image.tmdb.org/t/p/w185/\(imagem.backdropPath)") else { return }
-        imageDetalheFilme.af_setImage(withURL: imageUrl)
+    func fetchImage() {
+//        let outlet = imageDetalheFilme
+        let urlString = "http://image.tmdb.org/t/p/w185/\(filmeSelecionado!.backdropPath)"
+        guard let url = URL(string: urlString) else { return }
+        let getDataTask = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil else { return }
+        
+        DispatchQueue.main.async {
+            let image = UIImage(data: data)
+            self.imageDetalheFilme.image = image
+        }
+        }
+        getDataTask.resume()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+//    func configuraImagem(_ imagem:Filme){
+//        guard let imageUrl = URL(string: "http://image.tmdb.org/t/p/w185/\(imagem.backdropPath)") else { return }
+//        imageDetalheFilme.af_setImage(withURL: imageUrl)
+//    }
+    
 }
