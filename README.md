@@ -39,3 +39,8 @@ Criar um aplicativo que realize a listagem de filmes e exibição dos detalhes:
    - Quando finalizar a implementação faça um pull request; na descrição informe qual a abordagem que você utilizou para chegar na solução, descreva também quais foram os maiores desafios para concluir a avaliação.
 
 * :clap: Parabéns por ter chegado até aqui! :smile: _Um grande abraço e bem vindo ao time Mobile iOS_ :iphone: :punch:
+
+
+Sobre o projeto:
+
+O projeto como todo foi enriquecedor, mas principalmente desafiador! Meu app foi baseado na arquitetura MVC, porém sei que deixei a desejar, pois senti dificuldades em tirar responsabilidades do viewController. Trabalhar com closures ainda me parece estranho, o que me forcou a procurar alternativas. Comecei a implementar a paginação, porém estava com erro na requisição e por vezes puxava a próxima página e vezes não, dando erro no console, por fim, por não ter mais tempo hábil, desfiz essas ultimas modificações para não entregar um projeto com erro. Senti que a parte de tela e responsividade foi a mais fácil, que melhor fluiu. Fazer a manipulação dos objetos para a tela também foi simples, com excecão da imagem que me tirou algumas horas.
