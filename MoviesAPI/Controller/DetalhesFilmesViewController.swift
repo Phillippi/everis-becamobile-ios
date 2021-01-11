@@ -18,6 +18,8 @@ class DetalhesFilmesViewController: UIViewController {
     @IBOutlet weak var labelSinopseDetalheFilme: UILabel!
     @IBOutlet weak var labelAvaliacaoDetalheFilme: UILabel!
     
+    // MARK: IBActions
+    
     @IBAction func botaoVoltar(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -42,7 +44,6 @@ class DetalhesFilmesViewController: UIViewController {
         }
     }
     func fetchImage() {
-//        let outlet = imageDetalheFilme
         let urlString = "http://image.tmdb.org/t/p/w185/\(filmeSelecionado!.backdropPath)"
         guard let url = URL(string: urlString) else { return }
         let getDataTask = URLSession.shared.dataTask(with: url) { data, _, error in
@@ -52,13 +53,7 @@ class DetalhesFilmesViewController: UIViewController {
             let image = UIImage(data: data)
             self.imageDetalheFilme.image = image
         }
-        }
+    }
         getDataTask.resume()
     }
-    
-//    func configuraImagem(_ imagem:Filme){
-//        guard let imageUrl = URL(string: "http://image.tmdb.org/t/p/w185/\(imagem.backdropPath)") else { return }
-//        imageDetalheFilme.af_setImage(withURL: imageUrl)
-//    }
-    
 }

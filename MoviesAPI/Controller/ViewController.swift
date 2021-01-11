@@ -49,9 +49,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return celulaCapa
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = collectionView.bounds.width / 2
-            return CGSize(width: cellWidth-15, height: 160)
-
+        return UIDevice.current.userInterfaceIdiom == .phone ? CGSize(width: collectionView.bounds.width/2-15, height: 160) : CGSize(width: collectionView.bounds.width/3-20, height: 250)
         }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detalhe = movies[indexPath.item]
@@ -59,6 +57,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalhesFilmesViewController
         controller.filmeSelecionado = detalhe
         self.present(controller, animated: true, completion: nil)
+        
     }
     
     // MARK: - Métodos
@@ -79,45 +78,4 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         }.resume()
     }
-//    func loadHome() {
-//        clienteAPI.listaTodosFilmes { (filmes) in
-//            if let _filmes = filmes {
-//                self.movies = _filmes
-//                self.printMovies()
-//            } else {
-//                print("Erro ao carregar os filmes")
-//            }
-//        }
-//        clienteAPI.listaTodosFilmes { (capas) in
-//            if let _capas = capas {
-//                self.movies = _capas
-//                self.printCapas()
-//            } else {
-//                print("Erro ao carregar as capas")
-//            }
-//        }
-//    }
-//    func printMovies() {
-//        for movie in movies {
-//            let name: String
-//            if let title = movie.title {
-//                name = title
-//            } else if let movieName = movie.name {
-//                name = movieName
-//            } else {
-//                name = "Sem titulo"
-//            }
-//
-//            print(name)
-//        }
-//    }
-//    func printCapas() {
-//        for movie in movies {
-//            let capas: String
-//            let posterPath = movie.posterPath
-//                capas = "http://image.tmdb.org/t/p/w185/\(posterPath)"
-//                print(capas)
-//        }
-//    }
-    
 }

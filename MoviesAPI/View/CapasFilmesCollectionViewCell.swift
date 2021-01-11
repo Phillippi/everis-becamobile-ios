@@ -10,10 +10,12 @@ import AlamofireImage
 
 class CapasFilmesCollectionViewCell: UICollectionViewCell {
    
+    // MARK: IBOutlets
+    
     @IBOutlet weak var imagemCapa: UIImageView!
     //@IBOutlet weak var labelTitulo: UILabel!
     
-    
+    // MARK: Métodos
     
     func configuraHome(listaFilme:Filme){
         //labelTitulo.text = listaFilme.title ?? listaFilme.name
