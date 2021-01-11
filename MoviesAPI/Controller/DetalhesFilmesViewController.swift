@@ -33,7 +33,6 @@ class DetalhesFilmesViewController: UIViewController {
         super.viewDidLoad()
        configuraFilme()
         fetchImage()
-        //configuraImagem()
     }
     
     func configuraFilme() {

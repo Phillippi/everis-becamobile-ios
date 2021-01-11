@@ -25,7 +25,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadHome()
         colecaoCapasFilmes.dataSource = self
         colecaoCapasFilmes.delegate = self
         downloadJSON {
@@ -58,7 +57,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         controller.filmeSelecionado = detalhe
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
-        
     }
     
     // MARK: - Métodos
