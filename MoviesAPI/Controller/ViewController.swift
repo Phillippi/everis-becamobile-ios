@@ -56,6 +56,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalhesFilmesViewController
         controller.filmeSelecionado = detalhe
+        controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
         
     }
