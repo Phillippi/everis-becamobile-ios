@@ -27,9 +27,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         colecaoCapasFilmes.dataSource = self
         colecaoCapasFilmes.delegate = self
-        downloadJSON {
+        MainViewModel().downloadJSON(completion: { (filme) in
+            self.movies = filme
             self.colecaoCapasFilmes.reloadData()
-        }
+        })
+            
+        
     }
     
     // MARK: - Métodos CollectionView
@@ -57,24 +60,5 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         controller.filmeSelecionado = detalhe
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
-    }
-    
-    // MARK: - Métodos
-    
-    func downloadJSON(completion: @escaping () -> ()){
-        let url = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=\(key)&language=pt-BR")
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            if error == nil {
-                do {
-                    let filmes = try JSONDecoder().decode(Filmes.self, from: data!)
-                    self.movies = filmes.results
-                    DispatchQueue.main.async {
-                        completion()
-                }
-                }catch {
-                    print("JSON Error")
-                }
-        }
-        }.resume()
     }
 }
