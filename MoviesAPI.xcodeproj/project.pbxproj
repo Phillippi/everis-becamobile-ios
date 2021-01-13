@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D13BF6E25AF9EE000E64D57 /* MovieViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13BF6D25AF9EE000E64D57 /* MovieViewData.swift */; };
 		4D36828125AE36FD00425A3B /* MoviesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36828025AE36FD00425A3B /* MoviesAPI.swift */; };
 		4D36828E25AE5D9700425A3B /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36828D25AE5D9700425A3B /* Bindable.swift */; };
 		4D36829625AE9F4600425A3B /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36829525AE9F4600425A3B /* MovieViewModel.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		495BAA51FC6F0EB44F036F73 /* Pods-MoviesAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesAPI.debug.xcconfig"; path = "Target Support Files/Pods-MoviesAPI/Pods-MoviesAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		4D13BF6D25AF9EE000E64D57 /* MovieViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewData.swift; sourceTree = "<group>"; };
 		4D36828025AE36FD00425A3B /* MoviesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAPI.swift; sourceTree = "<group>"; };
 		4D36828D25AE5D9700425A3B /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		4D36829525AE9F4600425A3B /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				4D36829525AE9F4600425A3B /* MovieViewModel.swift */,
+				4D13BF6D25AF9EE000E64D57 /* MovieViewData.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				4DFF622E25A73CD0004556AF /* SceneDelegate.swift in Sources */,
 				4DA5BEAE25A7B33700C9F6BD /* Filmes.swift in Sources */,
 				4D92564325A931BE00538FE7 /* CapasFilmesCollectionViewCell.swift in Sources */,
+				4D13BF6E25AF9EE000E64D57 /* MovieViewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

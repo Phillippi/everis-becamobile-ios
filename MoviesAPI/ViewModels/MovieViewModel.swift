@@ -6,24 +6,21 @@
 //
 
 import Foundation
+import UIKit
 
-struct MovieViewModel {
+class MovieViewModel {
+    var movies: [Filme] = []
+    private let client: MoviesAPIProtocol
+    var movieViewData: Bindable<MovieViewData?> = Bindable(nil)
     
-    let title: String
-    let name: String
-    let overview: String
-    let posterPath: String
-    let backdropPath: String
-    let voteAverage: Double
     
-    // Injeção de dependencia
-    init(filme: Filme) {
-        self.title = filme.title ?? filme.name!
-        self.name = filme.name ?? filme.title!
-        self.overview = filme.overview
-        self.posterPath = filme.posterPath
-        self.backdropPath = filme.backdropPath
-        self.voteAverage = filme.voteAverage
+    init(client: MoviesAPIProtocol = MoviesAPI()) {
+        self.client = client
     }
-    
+    func loadMovie() {
+        client.downloadJSON { (filme) in
+            self.movies = filme
+            self.movieViewData.value = MovieViewData(model: filme)
+        }
+}
 }
