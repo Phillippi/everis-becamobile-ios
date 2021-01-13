@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Alamofire
-import AlamofireImage
 
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
@@ -20,6 +18,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     let key = "fecd1e2331c61e4e88e8cedaa0d1734f"
     var movies: [Filme] = []
+    let client: MoviesAPIProtocol = MoviesAPI()
     
     // MARK: - Método ViewDidLoad
     
@@ -27,12 +26,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         colecaoCapasFilmes.dataSource = self
         colecaoCapasFilmes.delegate = self
-        MainViewModel().downloadJSON(completion: { (filme) in
+        client.downloadJSON { (filme) in
             self.movies = filme
             self.colecaoCapasFilmes.reloadData()
-        })
-            
-        
+        }
     }
     
     // MARK: - Métodos CollectionView

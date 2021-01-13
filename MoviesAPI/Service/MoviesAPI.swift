@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import Foundation
 
-class MainViewModel: NSObject {
+protocol MoviesAPIProtocol {
+    func downloadJSON(completion: @escaping (_ filmes:[Filme]) -> Void)
+}
+
+class MoviesAPI: MoviesAPIProtocol {
     
     let key = "fecd1e2331c61e4e88e8cedaa0d1734f"
     var movies: [Filme] = []
     
-    func downloadJSON(completion: @escaping (_ filmes:[Filme]) -> Void){
+    func downloadJSON(completion: @escaping ([Filme]) -> Void){
         let url = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=\(key)&language=pt-BR")
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             if error == nil {
