@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 class MovieViewModel {
-    var movies: [Filme] = []
+    private var movies: [Filme] = []
+    private var contador: Int = 0
     private let client: MoviesAPIProtocol
     var movieViewData: Bindable<MovieViewData?> = Bindable(nil)
     
@@ -23,4 +24,12 @@ class MovieViewModel {
             self.movieViewData.value = MovieViewData(model: filme)
         }
 }
+    func retornaCount() -> Int {
+        self.contador = movies.count
+        return contador
+    }
+    func retornaItem() -> [Filme] {
+        let movie = self.movies
+        return movie
+    }
 }

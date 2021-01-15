@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MoviesAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q7T-uu-uDA">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DZf-eI-Lns">
-                                <rect key="frame" x="15" y="0.0" width="994" height="1346"/>
+                                <rect key="frame" x="15" y="0.0" width="345" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmes &amp; Séries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7L-5l-7EZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="994" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="33"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
                                         </variation>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cvh-2M-W1k">
-                                        <rect key="frame" x="0.0" y="72" width="994" height="1274"/>
+                                        <rect key="frame" x="0.0" y="53" width="345" height="614"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v6r-mS-vbe">
                                             <size key="itemSize" width="148" height="205"/>
@@ -96,20 +96,20 @@
             <objects>
                 <viewController storyboardIdentifier="detalhes" id="yKN-HP-NId" customClass="DetalhesFilmesViewController" customModule="MoviesAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3rl-Iy-sFj">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F9C-GK-Dvh">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="185"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F9C-GK-Dvh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="O2m-vd-KyK"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pqc-xY-Keg">
-                                <rect key="frame" x="10" y="185" width="1004" height="147.5"/>
+                                <rect key="frame" x="10" y="185" width="355" height="94.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46M-X2-oQw">
-                                        <rect key="frame" x="0.0" y="0.0" width="1004" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="31.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -118,7 +118,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sinopse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfu-do-qys">
-                                        <rect key="frame" x="0.0" y="62" width="1004" height="41"/>
+                                        <rect key="frame" x="0.0" y="41.5" width="355" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -127,7 +127,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaliação" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmX-RT-0lf">
-                                        <rect key="frame" x="0.0" y="113" width="1004" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="75" width="355" height="19.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                         <color key="textColor" systemColor="systemGreenColor"/>
                                         <nil key="highlightedColor"/>
@@ -139,11 +139,11 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jb7-0W-PU7">
-                                <rect key="frame" x="10" y="24" width="26" height="20"/>
+                                <rect key="frame" x="10" y="24" width="31" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <imageReference key="backgroundImage" image="arrowshape.turn.up.left.2.fill" catalog="system" symbolScale="large"/>
+                                    <imageReference key="backgroundImage" image="arrow.backward" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
                                     <action selector="botaoVoltar:" destination="yKN-HP-NId" eventType="touchUpInside" id="MTz-8Q-PdK"/>
@@ -170,11 +170,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ynw-Af-IKS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1211.25" y="42.25352112676056"/>
+            <point key="canvasLocation" x="-1212" y="41.829085457271368"/>
         </scene>
     </scenes>
     <resources>
-        <image name="arrowshape.turn.up.left.2.fill" catalog="system" width="128" height="86"/>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

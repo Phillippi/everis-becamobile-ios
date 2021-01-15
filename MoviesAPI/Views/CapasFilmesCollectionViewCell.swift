@@ -14,7 +14,12 @@ class CapasFilmesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imagemCapa: UIImageView!
     
+    // MARK: Variáveis
+    
+    var viewModel: CapasFilmesCollectionViewCellModel = CapasFilmesCollectionViewCellModel()
+    
     // MARK: Métodos
+    
     
     func configuraHome(listaFilme:Filme){
         guard let imageUrl = URL(string: "http://image.tmdb.org/t/p/w185/\(listaFilme.posterPath)") else { return }

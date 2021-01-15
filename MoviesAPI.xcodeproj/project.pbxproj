@@ -14,6 +14,8 @@
 		4D76271425AAA2BC00A91CF0 /* DetalhesFilmesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76271325AAA2BC00A91CF0 /* DetalhesFilmesViewController.swift */; };
 		4D92564325A931BE00538FE7 /* CapasFilmesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D92564225A931BE00538FE7 /* CapasFilmesCollectionViewCell.swift */; };
 		4DA5BEAE25A7B33700C9F6BD /* Filmes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5BEAD25A7B33700C9F6BD /* Filmes.swift */; };
+		4DF2671125B204CA0085BAF1 /* launchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF2671025B204CA0085BAF1 /* launchScreen.png */; };
+		4DF2671825B220390085BAF1 /* CapasFilmesCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2671725B220390085BAF1 /* CapasFilmesCollectionViewCellModel.swift */; };
 		4DFF622C25A73CD0004556AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF622B25A73CD0004556AF /* AppDelegate.swift */; };
 		4DFF622E25A73CD0004556AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF622D25A73CD0004556AF /* SceneDelegate.swift */; };
 		4DFF623025A73CD0004556AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFF622F25A73CD0004556AF /* ViewController.swift */; };
@@ -32,6 +34,8 @@
 		4D76271325AAA2BC00A91CF0 /* DetalhesFilmesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesFilmesViewController.swift; sourceTree = "<group>"; };
 		4D92564225A931BE00538FE7 /* CapasFilmesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapasFilmesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DA5BEAD25A7B33700C9F6BD /* Filmes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filmes.swift; sourceTree = "<group>"; };
+		4DF2671025B204CA0085BAF1 /* launchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreen.png; sourceTree = "<group>"; };
+		4DF2671725B220390085BAF1 /* CapasFilmesCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapasFilmesCollectionViewCellModel.swift; sourceTree = "<group>"; };
 		4DFF622825A73CD0004556AF /* MoviesAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFF622B25A73CD0004556AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DFF622D25A73CD0004556AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 			children = (
 				4D36829525AE9F4600425A3B /* MovieViewModel.swift */,
 				4D13BF6D25AF9EE000E64D57 /* MovieViewData.swift */,
+				4DF2671725B220390085BAF1 /* CapasFilmesCollectionViewCellModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -121,6 +126,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		4DF2670E25B204500085BAF1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4DF2671025B204CA0085BAF1 /* launchScreen.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		4DFF621F25A73CD0004556AF = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 				4D36827D25AE368F00425A3B /* Models */,
 				4D36827E25AE369A00425A3B /* Views */,
 				4D36827F25AE36A200425A3B /* ViewModels */,
+				4DF2670E25B204500085BAF1 /* Assets */,
 				4DFF623425A73CD1004556AF /* Assets.xcassets */,
 			);
 			path = MoviesAPI;
@@ -223,6 +237,7 @@
 			files = (
 				4DFF623825A73CD1004556AF /* LaunchScreen.storyboard in Resources */,
 				4DFF623525A73CD1004556AF /* Assets.xcassets in Resources */,
+				4DF2671125B204CA0085BAF1 /* launchScreen.png in Resources */,
 				4DFF623325A73CD0004556AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF2671825B220390085BAF1 /* CapasFilmesCollectionViewCellModel.swift in Sources */,
 				4D36828125AE36FD00425A3B /* MoviesAPI.swift in Sources */,
 				4DFF623025A73CD0004556AF /* ViewController.swift in Sources */,
 				4D36828E25AE5D9700425A3B /* Bindable.swift in Sources */,
