@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 class MovieViewModel {
     private var movies: [Filme] = []
@@ -17,7 +16,7 @@ class MovieViewModel {
     
     init(client: MoviesAPIProtocol = MoviesAPI()) {
         self.client = client
-    }
+    }   
     func loadMovie() {
         client.downloadJSON { (filme) in
             self.movies = filme

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import AlamofireImage
+import AlamofireImage
 
 
 class DetalhesFilmesViewController: UIViewController {
@@ -26,13 +26,24 @@ class DetalhesFilmesViewController: UIViewController {
     // MARK: - Váriaveis
     
     var filmeSelecionado:Filme? = nil
+    let viewModel: DetalhesFilmesViewModel = DetalhesFilmesViewModel()
     
     // MARK: - Métodos
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
        configuraFilme()
+//        viewModel.fetchImage()
         fetchImage()
+        bind()
+    }
+    func bind() {
+        viewModel.detalhesFilmesViewData.bind { (movieViewData) in
+            guard let `movieViewData` = movieViewData else { return }
+//            self.colecaoCapasFilmes.reloadData()
+//            self.imageDetalheFilme.image = self.viewModel
+        }
     }
     
     func configuraFilme() {
@@ -47,7 +58,7 @@ class DetalhesFilmesViewController: UIViewController {
         guard let url = URL(string: urlString) else { return }
         let getDataTask = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else { return }
-        
+
         DispatchQueue.main.async {
             let image = UIImage(data: data)
             self.imageDetalheFilme.image = image

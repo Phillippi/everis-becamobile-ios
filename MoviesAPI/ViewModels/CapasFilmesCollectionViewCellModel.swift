@@ -11,17 +11,10 @@ import AlamofireImage
 
 class CapasFilmesCollectionViewCellModel {
     
-    
+    private var movies: [Filme] = []
     var filmeSelecionado:Filme? = nil
-    var imagemCapa:UIImageView? = nil
     
     
-    func configuraHome(listaFilme:Filme){
-        guard let imageUrl = URL(string: "http://image.tmdb.org/t/p/w185/\(listaFilme.posterPath)") else { return }
-        self.imagemCapa!.af_setImage(withURL: imageUrl)
-    }
-    func retornaImagem() -> UIImageView {
-        let imagem = self.imagemCapa
-        return imagem!
-    }
+    
+   
 }
